@@ -1,6 +1,6 @@
 {
   "name": "react-native-world-map-svg",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "clickable world map build with react-native",
   "main": "index.js",
   "scripts": {
@@ -17,11 +17,11 @@
     "react",
     "native"
   ],
-  "author": "ELMEHAMMEDY MAJID",
+  "author": "quanghungit2511",
   "license": "ISC",
   "peerDependencies": {
-    "react": "^17.0.1",
-    "react-native": "^0.63.4"
+    "react": "17.0.1",
+    "react-native": "0.66.2"
   },
   "dependencies": {
     "@dudigital/react-native-zoomable-view": "^1.1.3",
