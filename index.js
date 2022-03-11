@@ -1,7 +1,6 @@
 import * as React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import Svg, { G, Path } from "react-native-svg";
-import ReactNativeZoomableView from "@dudigital/react-native-zoomable-view/src/ReactNativeZoomableView";
 
 const data = [
   {
@@ -1087,45 +1086,36 @@ export default function WorldMap({
 
   return (
     <View style={styles.container}>
-      <ReactNativeZoomableView
-        maxZoom={1.5}
-        minZoom={0.5}
-        zoomStep={0.5}
-        initialZoom={1}
-        bindToBorders={true}
-        style={{}}
+      <Svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="130%"
+        height="450"
+        viewBox="60 50 555 250"
+        id="svg5249"
       >
-        <Svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="130%"
-          height="450"
-          viewBox="60 50 555 250"
-          id="svg5249"
-        >
-          {data.map((item, index) => {
-            return (
-              <G
-                onPressIn={() => {
-                  onSelectContinent(item.class);
-                  selected !== item.class
-                    ? setSelected(item.class)
-                    : setSelected("");
-                }}
-              >
-                <Path
-                  fill={
-                    selected === item.class
-                      ? "#DFAF2B"
-                      : colors[item.class] || color
-                  }
-                  id={index.toString()}
-                  d={item.name}
-                />
-              </G>
-            );
-          })}
-        </Svg>
-      </ReactNativeZoomableView>
+        {data.map((item, index) => {
+          return (
+            <G
+              onPressIn={() => {
+                onSelectContinent(item.class);
+                selected !== item.class
+                  ? setSelected(item.class)
+                  : setSelected("");
+              }}
+            >
+              <Path
+                fill={
+                  selected === item.class
+                    ? "#DFAF2B"
+                    : colors[item.class] || color
+                }
+                id={index.toString()}
+                d={item.name}
+              />
+            </G>
+          );
+        })}
+      </Svg>
     </View>
   );
 }
