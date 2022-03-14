@@ -1075,6 +1075,7 @@ export default function WorldMap({
   color,
   selectedColor,
   Continentcolors,
+  dataActive
 }) {
   const [selected, setSelected] = React.useState("");
   let colors;
@@ -1106,8 +1107,8 @@ export default function WorldMap({
               <Path
                 fill={
                   selected === item.nation
-                    ? "#DFAF2B"
-                    : colors[item.nation] || color
+                    ? "#2754A8"
+                    : dataActive.includes(item.nation) ? "#6180C0" : colors[item.nation] || color
                 }
                 id={index.toString()}
                 d={item.name}
